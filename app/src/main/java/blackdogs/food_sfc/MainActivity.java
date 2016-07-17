@@ -13,7 +13,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
-    Customswipeadapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
