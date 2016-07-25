@@ -12,11 +12,13 @@ import android.view.View;
  * Created by keyur on 23-07-2016.
  */
 
-public class clickitem extends AppCompatActivity {
+public class clicked extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shoplist);
+
+
     }
 }
