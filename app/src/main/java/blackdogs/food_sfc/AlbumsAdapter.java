@@ -4,7 +4,10 @@ package blackdogs.food_sfc;
  * Created by keyur on 22-07-2016.
  */
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -67,14 +70,14 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(holder.overflow);
+                mContext.startActivity(new Intent(mContext, clickitem.class));
             }
         });
     }
 
     /**
      * Showing popup menu when tapping on 3 dots
-     */
+
     private void showPopupMenu(View view) {
         // inflate menu
         PopupMenu popup = new PopupMenu(mContext, view);
@@ -86,7 +89,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
 
     /**
      * Click listener for popup menu items
-     */
+
     class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
 
         public MyMenuItemClickListener() {
@@ -94,19 +97,20 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
 
         @Override
         public boolean onMenuItemClick(MenuItem menuItem) {
-            switch (menuItem.getItemId()) {
+             switch (menuItem.getItemId()) {
                 case R.id.action_add_favourite:
                     Toast.makeText(mContext, "Add to Cart", Toast.LENGTH_SHORT).show();
                     return true;
                 case R.id.action_play_next:
-                    Toast.makeText(mContext, "View Shop", Toast.LENGTH_SHORT).show();
+                  Toast.makeText(mContext, "View Shop", Toast.LENGTH_SHORT).show();
+
                     return true;
                 default:
             }
-            return false;
+           return false;
         }
     }
-
+    */
     @Override
     public int getItemCount() {
         return albumList.size();
